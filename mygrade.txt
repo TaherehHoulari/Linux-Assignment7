@@ -1,0 +1,62 @@
+#!/bin/bash
+# FileName: mygrade.sh
+# Date : 09 November 2022
+# Author: SeyedehTahereh Houlari
+# Semester: Fall 2022
+# Course code: CST8102
+# Course section: 311
+# Comments: calculating students grade to  print out GPA
+clear 
+echo "Script to Convert Numerical Grade into Letter Grade"
+echo "Enter Assignment mark ( 0 - 40):"
+read assignmentMark
+echo "Enter Test 1 mark ( 0 - 15):"
+read test1
+echo "Enter Test 2 mark ( 0 - 15):"
+read test2
+echo "Enter Final exam mark (0 - 30):"
+read finalExam
+# simple arithmetic calculations
+(( TotalGrade = assignmentMark + test1 + test2 + finalExam))
+if [ $TotalGrade -ge 90 ] && [ $TotalGrade -le 100 ]
+then
+grade="A+"
+elif [ $TotalGrade -ge 85 ] 
+then
+grade="A"
+elif [ $TotalGrade -ge 80 ] 
+then
+grade="A-"
+elif [ $TotalGrade -ge 77 ] 
+then
+grade="B+"
+elif [ $TotalGrade -ge 73 ] 
+then
+grade="B"
+elif [ $TotalGrade -ge 70 ] 
+then
+grade="B-"
+elif [ $TotalGrade -ge 67 ] 
+then
+grade="C+"
+elif [ $TotalGrade -ge 63 ] 
+then
+grade="C"
+elif [ $TotalGrade -ge 60 ] 
+then
+grade="C-"
+elif [ $TotalGrade -ge 57 ] 
+then
+grade="D+"
+elif [ $TotalGrade -ge 53 ] 
+then
+grade="D"
+elif [ $TotalGrade -ge 50 ] 
+then
+grade="D-"
+elif [ $TotalGrade -ge 0 ] 
+then
+grade="F"
+fi
+echo "Your final numeric grade is $TotalGrade, and your final letter grade is $grade"
+# eof: mygrade.sh
